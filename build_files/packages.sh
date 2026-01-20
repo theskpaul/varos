@@ -4,6 +4,7 @@ set -ouex pipefail
 
 ### Install packages
 dnf5 config-manager setopt terra.enabled=1
+dnf5 config-manager setopt rpmfusion-free.enabled=1
 dnf5 config-manager setopt rpmfusion-nonfree.enabled=1
 
 dnf5 remove -y libva-intel-media-driver
@@ -40,6 +41,7 @@ PACKAGES="alacritty \
           clamav \
           clamtk \
           btop \
+	  intel-gpu-tools \
           intel-media-driver"
           # docker \
           # docker-cli \
@@ -49,3 +51,7 @@ PACKAGES="alacritty \
           # docker-compose-switch \
 
 dnf5 install -y $PACKAGES --skip-unavailable
+
+dnf5 config-manager setopt terra.enabled=0
+dnf5 config-manager setopt rpmfusion-free.enabled=1
+dnf5 config-manager setopt rpmfusion-nonfree.enabled=0
