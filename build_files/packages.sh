@@ -33,7 +33,7 @@ PACKAGES="alacritty \
           memtest86+ \
           smartmontools \
           plasma-firewall \
-          ksyslog \
+          ksystemlog \
           kclock
           kcalc \
           okular \
