@@ -3,14 +3,15 @@
 set -ouex pipefail
 
 ### Install packages
-dnf5 config-manager setopt terra.enabled=1
-dnf5 config-manager setopt rpmfusion-free.enabled=1
-dnf5 config-manager setopt rpmfusion-nonfree.enabled=1
+# dnf5 config-manager setopt terra.enabled=1
+# dnf5 config-manager setopt rpmfusion-free.enabled=1
+# dnf5 config-manager setopt rpmfusion-nonfree.enabled=1
 
 dnf5 remove -y libva-intel-media-driver
 
 PACKAGES="alacritty \
           bat \
+          distrobox \
           clang \
           neovim \
           gparted \
@@ -33,7 +34,7 @@ PACKAGES="alacritty \
           smartmontools \
           plasma-firewall \
           ksyslog \
-          kgpg \
+          kclock
           kcalc \
           okular \
           gwenview \
@@ -43,16 +44,21 @@ PACKAGES="alacritty \
           btop \
           intel-gpu-tools \
           intel-media-driver \
-          terminus-fonts-console"
-          # docker \
-          # docker-cli \
-          # containerd \
-          # docker-buildx \
-          # docker-compose \
-          # docker-compose-switch \
+          terminus-fonts-console \
+          docker \
+          docker-cli \
+          containerd \
+          docker-buildx \
+          docker-compose \
+          docker-compose-switch \
+          virt-manager \
+          qemu"
 
 dnf5 install -y $PACKAGES --skip-unavailable
 
-dnf5 config-manager setopt terra.enabled=0
-dnf5 config-manager setopt rpmfusion-free.enabled=1
-dnf5 config-manager setopt rpmfusion-nonfree.enabled=0
+# dnf5 config-manager setopt terra.enabled=0
+# dnf5 config-manager setopt terra.enabled=0
+# dnf5 config-manager setopt rpmfusion-free.enabled=0
+# dnf5 config-manager setopt rpmfusion-free-updates.enabled=0
+# dnf5 config-manager setopt rpmfusion-nonfree.enabled=0
+# dnf5 config-manager setopt rpmfusion-nonfree-updates.enabled=0
