@@ -10,7 +10,7 @@ dnf5 remove -y libva-intel-media-driver
 PACKAGES="toolbox \
          clamav \
          clamtk \
-         intel-gpu-tools \
+         igt-gpu-tools \
          intel-media-driver \
          gparted \
          gh"
