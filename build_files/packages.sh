@@ -13,7 +13,8 @@ PACKAGES="toolbox \
          igt-gpu-tools \
          intel-media-driver \
          gparted \
-         gh"
+         gh \
+         btop"
 
 dnf5 install -y $PACKAGES --skip-unavailable
 
